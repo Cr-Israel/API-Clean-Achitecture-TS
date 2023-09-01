@@ -35,10 +35,10 @@ export class InMemoryUsersRepository {
     }
 
     // Atualiza as informações do usuário com base no índice encontrado
-    this.items[userIndex] = {
-      ...this.items[userIndex], // Mantém as informações existentes do usuário
-      ...updatedUser // Atualiza com as novas informações
-    }
+    // this.items[userIndex] = {
+    //   ...this.items[userIndex], // Mantém as informações existentes do usuário
+    //   ...updatedUser // Atualiza com as novas informações
+    // }
   }
 
   async create (user: User) {
