@@ -6,6 +6,10 @@
   "repository": "git@github.com:Cr-Israel/API-Clean-Achitecture-TS.git",
   "author": "Cr-Israel <carlosisrael08@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node dist/server.js",
+    "test": "vitest"
+  },
   "devDependencies": {
     "@types/node": "^20.5.7",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
