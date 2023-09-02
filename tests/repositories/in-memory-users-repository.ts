@@ -17,28 +17,10 @@ export class InMemoryUsersRepository {
     return this.items
   }
 
-  async update (id: User['_id'], updatedUser: User) {
-    // const userIndex = this.items.findIndex((item) => item.email === updatedUser.email)
+  async delete (user: User) {
+    const itemIndex = this.items.findIndex((item) => item.id === user.id)
 
-    // if (userIndex === -1) {
-    //   throw new Error('User not found.')
-    // }
-
-    // this.items[userIndex].email = updatedUser.email
-    // this.items[userIndex].name = updatedUser.name
-    // this.items[userIndex].password = updatedUser.password
-
-    const userIndex = this.items.findIndex((user) => user.id === id)
-
-    if (userIndex === -1) {
-      throw new Error('User not found.')
-    }
-
-    // Atualiza as informações do usuário com base no índice encontrado
-    // this.items[userIndex] = {
-    //   ...this.items[userIndex], // Mantém as informações existentes do usuário
-    //   ...updatedUser // Atualiza com as novas informações
-    // }
+    this.items.splice(itemIndex, 1)
   }
 
   async create (user: User) {
