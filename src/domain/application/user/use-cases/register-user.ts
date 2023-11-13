@@ -16,7 +16,7 @@ export class RegisterUserUseCase {
     name,
     email,
     password
-  }: RegisterUserUseCaseRequest): Promise<RegisterUserUseCaseReponse> {
+  }: RegisterUserUseCaseRequest): Promise<RegisterUserUseCaseResponse> {
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
     if (userWithSameEmail) {
@@ -30,5 +30,9 @@ export class RegisterUserUseCase {
     })
 
     await this.usersRepository.create(user)
+
+    return {
+      user
+    }
   }
 }
